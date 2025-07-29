@@ -5,6 +5,7 @@ import CharacterCard from './CharacterCard';
 import React from 'react';
 import { CharacterApiResponse, CharacterSchema, CharactersInfiniteData } from '@/types/types';
 import { getCharacters } from '@/lib/server';
+import OfflineIndicator from './OfflineIndicator';
 
 
 
@@ -36,11 +37,12 @@ export default function HomePageClient() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+
       <h1 className="mt-10 text-4xl md:text-5xl font-semibold font-schwifty text-primary mb-8">
         Find Rick and Morty Characters
       </h1>
       
-
+      <OfflineIndicator/>
       {error && <div className="text-center text-destructive">Error: {error.message}</div>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

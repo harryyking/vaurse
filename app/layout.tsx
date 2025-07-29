@@ -5,6 +5,7 @@ import "./globals.css";
 import QueryProvider from "@/components/QueryProvider";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
+import OfflineIndicator from "@/components/OfflineIndicator";
 
 const getSchwiftyFont = localFont({
   src: '../public/fonts/GetSchwifty.ttf', // Adjust path if your font file is different
@@ -31,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-
+    <head> 
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/maskable_icon_x192.png" /> 
+        <meta name="theme-color" content="#2D3748" />
+      </head>
       <body
          className={cn(
           gochiHandFont.variable,
@@ -43,6 +48,7 @@ export default function RootLayout({
         <QueryProvider>
 
         {children}
+        <OfflineIndicator/>
         <Toaster/>
       </QueryProvider>
       </body>
