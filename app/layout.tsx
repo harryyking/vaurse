@@ -5,13 +5,13 @@ import "./globals.css";
 import QueryProvider from "@/components/QueryProvider";
 import { cn } from "@/lib/utils";
 
-export const getSchwiftyFont = localFont({
+const getSchwiftyFont = localFont({
   src: '../public/fonts/GetSchwifty.ttf', // Adjust path if your font file is different
   variable: '--font-get-schwifty', // CSS variable for Get Schwifty
   display: 'swap',
 });
 
-export const gochiHandFont = Gochi_Hand({
+const gochiHandFont = Gochi_Hand({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-gochi-hand', // CSS variable for Gochi Hand
