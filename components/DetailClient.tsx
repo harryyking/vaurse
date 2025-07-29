@@ -67,7 +67,7 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
 
       <Card className="rounded-lg shadow-xl overflow-hidden md:flex bg-card text-card-foreground p-0">
         
-        <div className="relative w-full h-80 md:w-1/3 md:h-auto overflow-hidden">
+        <div className="relative w-full h-80 overflow-hidden">
          
           <Image
             src={character.image}
