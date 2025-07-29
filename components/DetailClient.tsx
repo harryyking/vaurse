@@ -17,42 +17,31 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge'; // Optional: for status
-import { Button } from '@/components/ui/button'; // Optional: for back button
+import { Button } from '@/components/ui/button'; 
+import { getCharacterDetailsId } from '@/lib/server';
 
-// API fetching function for character details
-// Added return type Promise<CharacterSchema> for type safety
-const getCharacterDetails = async (id: number): Promise<CharacterSchema> => {
-    const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-    if (!res.ok) {
-        // Provide more descriptive error for debugging
-        throw new Error(`Failed to fetch character details for ID ${id}: ${res.statusText}`);
-    }
-    return res.json();
-};
 
-// Main DetailsPageClient component
+
 export default function DetailsPageClient({ characterId }: DetailsPageClientProps) {
     const { 
-        data: character, // Renamed 'data' to 'character' for clarity
+        data: character, 
         error, 
         isLoading 
-    } = useQuery<CharacterSchema, Error>({ // Added type parameters for useQuery
+    } = useQuery<CharacterSchema, Error>({ 
         queryKey: ['character', characterId],
-        queryFn: () => getCharacterDetails(characterId),
-        // Optional: Add staleTime and gcTime for caching details
-        staleTime: 1000 * 60 * 60, // Keep character details fresh for 1 hour
-        gcTime: 1000 * 60 * 60 * 24, // Keep in cache for 24 hours even if unused
+        queryFn: () => getCharacterDetailsId(characterId),
+        staleTime: 1000 * 60 * 60, 
+        gcTime: 1000 * 60 * 60 * 24,
     });
 
-    // Loading State
+   
     if (isLoading) return (
         <div className="text-center py-20 text-xl text-muted-foreground">
             Loading character details...
         </div>
     );
 
-    // Error State
+
     if (error) return (
         <div className="text-center py-20 text-destructive text-xl">
             Error: {error.message}
@@ -70,11 +59,11 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
     const getStatusColorClass = (status: string) => {
         switch (status) {
             case 'Alive':
-                return 'bg-green-500'; // Or use a custom success/alive color from theme if defined
+                return 'bg-green-500'; 
             case 'Dead':
-                return 'bg-destructive'; // Use your destructive color from theme
-            default: // 'unknown' or any other status
-                return 'bg-muted-foreground'; // Use a muted gray from theme
+                return 'bg-destructive'; 
+            default: 
+                return 'bg-muted-foreground'; 
         }
     };
 
@@ -88,16 +77,16 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
             </Link>
 
             {/* Using Shadcn Card for the main details block */}
-            <Card className="rounded-lg shadow-xl overflow-hidden md:flex bg-card text-card-foreground">
-                <CardHeader className="p-0 md:w-1/3 flex-shrink-0">
-                    <div className="relative w-full h-80 md:h-full overflow-hidden"> {/* Fixed height for smaller screens, full height for md */}
+            <Card className="rounded-lg shadow-xl overflow-hidden md:flex bg-card text-card-foreground p-0">
+                <CardHeader className="p-0 flex-shrink-0">
+                    <div className="relative w-full h-80 md:h-full"> 
                         <Image
                             src={character.image}
                             alt={character.name}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw" // Optimize for details page
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw" 
                             className="object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
-                            priority // Prioritize loading for the main image on the page
+                            priority 
                         />
                     </div>
                 </CardHeader>
@@ -111,9 +100,9 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
                     {/* Status & Species */}
                     <div className="flex items-center mb-4">
                         <span className={`h-3 w-3 rounded-full mr-2 ${getStatusColorClass(character.status)}`}></span>
-                        <CardDescription className="text-lg text-foreground"> {/* Using text-foreground for main text */}
+                        <CardDescription className="text-lg text-foreground"> 
                             {character.status} - {character.species}
-                            {character.type && ` (${character.type})`} {/* Show type if available */}
+                            {character.type && ` (${character.type})`}
                         </CardDescription>
                     </div>
 

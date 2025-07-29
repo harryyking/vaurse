@@ -5,26 +5,8 @@ import Link from 'next/link';
 import CharacterCard from './CharacterCard';
 import React from 'react';
 import { CharacterApiResponse, CharacterSchema, CharactersInfiniteData } from '@/types/types';
+import { getCharacters } from '@/lib/server';
 
-// API fetching function (can be in a separate lib/api.js file)
-// Added return type Promise<CharacterApiResponse> for stronger type safety
-const getCharacters = async ({ pageParam = 1 }): Promise<CharacterApiResponse> => {
-  const res = await fetch(`https://rickandmortyapi.com/api/character?page=${pageParam}`);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch characters: ${res.statusText}`);
-  }
-  return res.json();
-};
-
-// getCharacterDetails function (kept here for completeness, but typically in a separate API file)
-// Added return type Promise<CharacterSchema>
-const getCharacterDetails = async (id: number): Promise<CharacterSchema> => {
-  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch character details for ID ${id}: ${res.statusText}`);
-  }
-  return res.json();
-};
 
 
 export default function HomePageClient() {

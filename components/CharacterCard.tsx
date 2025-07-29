@@ -11,13 +11,9 @@ import {
   CardTitle,
 } from '@/components/ui/card'; 
 import Image from 'next/image';
+import { getCharacterDetails } from '@/lib/server';
 
 
-const getCharacterDetails = async (id: number) => {
-  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-  if (!res.ok) throw new Error('Failed to fetch details');
-  return res.json();
-};
 
 const CharacterCard = ({ character }: { character: CharacterSchema }) => {
   const queryClient = useQueryClient();
@@ -53,6 +49,7 @@ const CharacterCard = ({ character }: { character: CharacterSchema }) => {
             />
           </div>
         </CardHeader>
+
 
         <CardContent className="flex-grow p-4 text-center">
           <CardTitle className="text-lg font-semibold mb-1 truncate text-foreground">
