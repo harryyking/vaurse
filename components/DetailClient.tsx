@@ -69,13 +69,11 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
         
         <div className="relative w-full h-80 md:w-1/2 md:h-auto overflow-hidden">
          
-          <Image
+          <img
             src={character.image}
             alt={character.name}
-            fill 
             sizes="(max-width: 768px) 100vw, 33vw" 
             className="object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
-            priority
           />
         </div>
 
