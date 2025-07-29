@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import QueryProvider from "@/components/QueryProvider";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 const getSchwiftyFont = localFont({
   src: '../public/fonts/GetSchwifty.ttf', // Adjust path if your font file is different
@@ -42,6 +43,7 @@ export default function RootLayout({
         <QueryProvider>
 
         {children}
+        <Toaster/>
       </QueryProvider>
       </body>
     </html>
