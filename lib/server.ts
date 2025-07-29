@@ -1,3 +1,4 @@
+"use server"
 import { CharacterApiResponse, CharacterSchema } from "@/types/types";
 
 
