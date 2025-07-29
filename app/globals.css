@@ -1,26 +1,148 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-gochi: var(--font-gochi-hand);
+  --font-schwifty: var(--font-get-schwifty);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Default Light Theme - Clean and accessible, inspired by show's base, but light */
+  --radius: 0.625rem; /* ~10px */
+
+  --background: oklch(1 0 0); /* White */
+  --foreground: oklch(0.129 0.042 264.695); /* Very dark desaturated blue/purple */
+
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: oklch(0.129 0.042 264.695); /* Very dark desaturated blue/purple */
+
+  --popover: oklch(1 0 0); /* White */
+  --popover-foreground: oklch(0.129 0.042 264.695); /* Very dark desaturated blue/purple */
+
+  /* Primary: A slightly darker teal/cyan for light mode */
+  --primary: oklch(0.208 0.042 265.755); /* Original primary - a deep, desaturated blue */
+  --primary-foreground: oklch(0.984 0.003 247.858); /* Near white */
+
+  /* Secondary: A subtle, lighter blue/grey */
+  --secondary: oklch(0.968 0.007 247.896); /* Original secondary - a very light blue/grey */
+  --secondary-foreground: oklch(0.208 0.042 265.755); /* Original primary for contrast */
+
+  --muted: oklch(0.968 0.007 247.896); /* Very light blue/grey */
+  --muted-foreground: oklch(0.554 0.046 257.417); /* Medium desaturated blue/grey */
+
+  --accent: oklch(0.968 0.007 247.896); /* Very light blue/grey */
+  --accent-foreground: oklch(0.208 0.042 265.755); /* Dark desaturated blue */
+
+  --destructive: oklch(0.577 0.245 27.325); /* Original destructive red */
+  --border: oklch(0.929 0.013 255.508); /* Light desaturated blue/grey */
+  --input: oklch(0.929 0.013 255.508); /* Light desaturated blue/grey */
+  --ring: oklch(0.704 0.04 256.788); /* Medium desaturated blue/grey */
+
+  /* Sidebar (light mode) - Keep it light and clean */
+  --sidebar: oklch(0.984 0.003 247.858); /* Near white */
+  --sidebar-foreground: oklch(0.129 0.042 264.695); /* Very dark desaturated blue/purple */
+  --sidebar-primary: oklch(0.208 0.042 265.755); /* Dark desaturated blue */
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858); /* Near white */
+  --sidebar-accent: oklch(0.968 0.007 247.896); /* Very light blue/grey */
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755); /* Dark desaturated blue */
+  --sidebar-border: oklch(0.929 0.013 255.508); /* Light desaturated blue/grey */
+  --sidebar-ring: oklch(0.704 0.04 256.788); /* Medium desaturated blue/grey */
+}
+
+.dark {
+  /* Rick and Morty Dark Theme */
+
+  /* Backgrounds & Foregrounds */
+  --background: oklch(0.09 0.03 260); /* Deeper, slightly more saturated dark blue/purple */
+  --foreground: oklch(0.984 0.003 247.858); /* Near white for general text */
+
+  /* Cards & Popovers: Darker space-like feel */
+  --card: oklch(0.15 0.04 262); /* Slightly lighter than background for separation */
+  --card-foreground: oklch(0.984 0.003 247.858); /* Near white */
+  --popover: var(--card);
+  --popover-foreground: var(--card-foreground);
+
+  /* Primary: Rick's Portal Teal/Cyan - Bright & Iconic */
+  --primary: oklch(0.55 0.15 200); /* A vibrant, eye-catching teal/cyan */
+  --primary-foreground: oklch(0.129 0.042 264.695); /* Dark text for contrast on bright primary */
+
+  /* Secondary: Morty's Yellowish-Orange or a complementary alien pink/purple */
+  --secondary: oklch(0.75 0.15 90); /* A slightly desaturated but bright yellowish-orange (Morty's vibe) */
+  --secondary-foreground: oklch(0.129 0.042 264.695); /* Dark text for contrast */
+
+  --muted: oklch(0.20 0.04 260); /* Darker muted tone, for subtle elements */
+  --muted-foreground: oklch(0.70 0.05 258); /* Lighter grey for muted text */
+
+  --accent: oklch(0.20 0.04 260); /* Same as muted, for hover states etc. */
+  --accent-foreground: oklch(0.984 0.003 247.858); /* Near white */
+
+  --destructive: oklch(0.704 0.191 22.216); /* A punchy orange-red for destructive actions */
+
+  --border: oklch(0.25 0.04 260); /* Slightly lighter border for subtle division */
+  --input: oklch(0.20 0.04 260); /* Input background matching muted */
+  --ring: oklch(0.55 0.15 200); /* Ring color matching primary for focus states */
+
+  /* Sidebar (dark mode) - Can be a distinct dark tone or match card */
+  --sidebar: oklch(0.15 0.04 262); /* Match card background for cohesive look */
+  --sidebar-foreground: oklch(0.984 0.003 247.858); /* Near white */
+  --sidebar-primary: oklch(0.55 0.15 200); /* Primary teal for active sidebar items */
+  --sidebar-primary-foreground: oklch(0.129 0.042 264.695); /* Dark text on primary */
+  --sidebar-accent: oklch(0.20 0.04 260); /* Muted for hover */
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858); /* Near white */
+  --sidebar-border: oklch(0.25 0.04 260); /* Subtle border */
+  --sidebar-ring: oklch(0.55 0.15 200); /* Primary ring */
+
+  /* Chart colors - Can be the more vibrant, varied alien colors */
+  --chart-1: oklch(0.65 0.25 40); /* Vibrant Orange/Red */
+  --chart-2: oklch(0.60 0.15 180); /* Bright Blue */
+  --chart-3: oklch(0.70 0.20 300); /* Bright Pink/Magenta */
+  --chart-4: oklch(0.80 0.20 80); /* Lively Green */
+  --chart-5: oklch(0.50 0.10 230); /* Rich Purple */
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
