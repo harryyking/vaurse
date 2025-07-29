@@ -67,14 +67,14 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
 
       <Card className="rounded-lg shadow-xl overflow-hidden md:flex bg-card text-card-foreground p-0">
         
-        <div className="relative w-full h-80 md:mx-auto md:w-96 md:h-auto overflow-hidden">
+        <div className="relative w-full h-80 md:mx-auto md:w-96 md:h-96 overflow-hidden">
          
           <Image
             src={character.image}
             alt={character.name}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw" 
-            className="object-cover md:object-contain"
+            sizes="(max-width: 768px) 100vw, 384px" 
+            className="object-cover rounded"
             priority
           />
         </div>
