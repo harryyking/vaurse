@@ -25,7 +25,7 @@ export default function OfflineIndicator() {
         toast.success(
           "You're back online!",
           {
-          id: offlineToastId.current, // Use the ID to update/dismiss
+          id: offlineToastId.current, 
           description: "Data will now be fetched live.",
           duration: 3000,
         });

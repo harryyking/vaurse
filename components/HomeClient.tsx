@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard';
 import React from 'react';
 import { CharacterApiResponse, CharacterSchema, CharactersInfiniteData } from '@/types/types';
 import { getCharacters } from '@/lib/server';
-import OfflineIndicator from './OfflineIndicator';
+
 
 
 
@@ -42,7 +42,6 @@ export default function HomePageClient() {
         Find Rick and Morty Characters
       </h1>
       
-      <OfflineIndicator/>
       {error && <div className="text-center text-destructive">Error: {error.message}</div>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
