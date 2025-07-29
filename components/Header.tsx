@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { cn } from '@/lib/utils'; // Assuming you have this utility for Tailwind class merging
+import { cn } from '@/lib/utils'; 
 
 // Array of Rick and Morty banner images
 const bannerImages = [
-  '/images/banner1.jfif', // Assuming you have these images in your /public/images/banner folder
-  '/images/banner2.jfif',
- '/images/banner3.jfif',
-  '/images/banner4.jfif',
-  '/images/banner5.jfif',
-  '/images/banner6.jfif',
+  'https://utfs.io/f/f4KBeJpBpPha43rip6tJf7CMH3v5EYbo1zgXI0TpklyxBw2a', 
+  'https://utfs.io/f/f4KBeJpBpPha1kqc08QaDF6vL2NeKVYsPHRwgfjciTGSq4u7',
+ 'https://utfs.io/f/f4KBeJpBpPhalBsMa2JbeY16NfjbZq5w7HB4z0QtDgOWG2aK',
+  'https://utfs.io/f/f4KBeJpBpPha82JYKAJMcUv0M9VyRGbnmFAOaw1Ttd47CQWu',
+  'https://utfs.io/f/f4KBeJpBpPhamMV40KFnGJSq68XUHhANpk5vjLRFc7I9uQgs',
+  'https://utfs.io/f/f4KBeJpBpPhahmB4jf09ExeFWZoTyCNp8XGKVca5SPijb3Dn',
 ];
 
 export default function Header() {
@@ -24,9 +24,9 @@ export default function Header() {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % bannerImages.length
       );
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
-    return () => clearInterval(interval); // Cleanup on component unmount
+    return () => clearInterval(interval); 
   }, []);
 
   return (

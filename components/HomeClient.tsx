@@ -1,7 +1,6 @@
 'use client';
 
-import { useInfiniteQuery } from '@tanstack/react-query'; // Removed useQueryClient if not directly used outside hooks
-import Link from 'next/link';
+import { useInfiniteQuery } from '@tanstack/react-query'; 
 import CharacterCard from './CharacterCard';
 import React from 'react';
 import { CharacterApiResponse, CharacterSchema, CharactersInfiniteData } from '@/types/types';
@@ -11,15 +10,15 @@ import { getCharacters } from '@/lib/server';
 
 export default function HomePageClient() {
   const {
-    data, // Type: CharactersInfiniteData | undefined
+    data, 
     error,
     fetchNextPage,
     hasNextPage,
     isFetching,
     isFetchingNextPage,
   } = useInfiniteQuery<
-    CharacterApiResponse, // TQueryFnData: The type of data returned by queryFn for a single page
-    Error,                   // TError: The type of error that can be thrown
+    CharacterApiResponse, 
+    Error,                   
     CharactersInfiniteData,  // TData: The type of the aggregated data stored in the cache
     string[],                // TQueryKey: The type of the queryKey (e.g., ['characters'])
     number                   // TPageParam: The type of the page parameter (e.g., 1, 2, 3...)
@@ -27,7 +26,7 @@ export default function HomePageClient() {
     queryKey: ['characters'],
     queryFn: getCharacters,
     initialPageParam: 1,
-    getNextPageParam: (lastPage: CharacterApiResponse) => { // lastPage is correctly typed here
+    getNextPageParam: (lastPage: CharacterApiResponse) => { 
       const nextUrl = lastPage.info.next;
       if (!nextUrl) return undefined;
       const page = new URL(nextUrl).searchParams.get('page');
@@ -59,7 +58,7 @@ export default function HomePageClient() {
         <button
           onClick={() => fetchNextPage()}
           disabled={!hasNextPage || isFetchingNextPage}
-          // Updated button styling to use theme colors and provide better feedback
+  
           className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-2 px-4 rounded-lg
                      transition-colors duration-300
                      disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed
@@ -69,7 +68,6 @@ export default function HomePageClient() {
         </button>
       </div>
 
-      {/* Updated loading message text color to muted-foreground */}
       {isFetching && !isFetchingNextPage ? <div className="text-center py-4 text-muted-foreground">Loading...</div> : null}
     </div>
   );
