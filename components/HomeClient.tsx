@@ -55,7 +55,7 @@ export default function HomePageClient() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="mt-10 text-4xl md:text-5xl font-semibold text-primary mb-8">
+      <h1 className="mt-10 text-4xl md:text-5xl font-semibold font-schwifty text-primary mb-8">
         Find Rick and Morty Characters
       </h1>
       

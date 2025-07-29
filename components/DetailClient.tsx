@@ -90,12 +90,11 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
             {/* Using Shadcn Card for the main details block */}
             <Card className="rounded-lg shadow-xl overflow-hidden md:flex bg-card text-card-foreground">
                 <CardHeader className="p-0 md:w-1/3 flex-shrink-0">
-                    <div className="relative w-full h-80 md:h-full"> {/* Fixed height for smaller screens, full height for md */}
+                    <div className="relative w-full h-80 md:h-full overflow-hidden"> {/* Fixed height for smaller screens, full height for md */}
                         <Image
                             src={character.image}
                             alt={character.name}
-                            width={200}
-                            height={200}
+                            fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw" // Optimize for details page
                             className="object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
                             priority // Prioritize loading for the main image on the page
@@ -149,7 +148,6 @@ export default function DetailsPageClient({ characterId }: DetailsPageClientProp
                         </ul>
                     </div>
                 </CardContent>
-                {/* Optional: Add CardFooter here for more details if needed */}
             </Card>
         </div>
     );
