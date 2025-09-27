@@ -1,57 +1,83 @@
-import type { Metadata } from "next";
-import { Gochi_Hand} from "next/font/google";
-import localFont from 'next/font/local';
-import "./globals.css";
-import QueryProvider from "@/components/QueryProvider";
-import { cn } from "@/lib/utils";
-import { Toaster } from "@/components/ui/sonner";
-import OfflineIndicator from "@/components/OfflineIndicator";
-
-const getSchwiftyFont = localFont({
-  src: '../public/fonts/GetSchwifty.ttf', // Adjust path if your font file is different
-  variable: '--font-get-schwifty', // CSS variable for Get Schwifty
-  display: 'swap',
-});
-
-const gochiHandFont = Gochi_Hand({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-gochi-hand', // CSS variable for Gochi Hand
-  display: 'swap',
-});
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
+import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Rick And Morty Characters",
-  description: "List of all Rick and Morty Characters",
-};
+  title: {
+    default: "Unhooked - Faith-Based Recovery from Pornography Addiction",
+    template: "%s | Unhooked",
+  },
+  description:
+    "Break free from pornography addiction with faith-based support, accountability partners, and a Christian community. Download the Unhooked app for free.",
+  keywords:
+    "pornography addiction, faith-based recovery, Christian accountability, addiction recovery app, spiritual healing, porn addiction help, Christian support",
+  authors: [{ name: "Unhooked Team" }],
+  creator: "Unhooked",
+  publisher: "Unhooked",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://unhooked.xyz"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Unhooked - Faith-Based Recovery App",
+    description:
+      "Join thousands who have found freedom from pornography addiction through faith, accountability, and community support.",
+    url: "https://unhooked.app",
+    siteName: "Unhooked",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Unhooked - Faith-Based Recovery App",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unhooked - Faith-Based Recovery App",
+    description: "Break free from pornography addiction with faith-based support and accountability.",
+    images: ["/og-image.jpg"],
+    creator: "@unhooked_app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className="dark">
-    <head> 
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icons/maskable_icon_x192.png" /> 
-        <meta name="theme-color" content="#2D3748" />
-      </head>
-      <body
-         className={cn(
-          gochiHandFont.variable,
-          getSchwiftyFont.variable, 
-          "font-gochi" 
-          
-        )}
-        >
-        <QueryProvider>
-
-        {children}
-        <OfflineIndicator/>
-        <Toaster/>
-      </QueryProvider>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <Suspense fallback={null}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
-  );
+  )
 }
