@@ -58,7 +58,7 @@ export function AppScreenshots() {
                 </div>
                 <div className="flex-1">
                   <p className="text-xs font-medium">John D.</p>
-                  <p className="text-xs text-gray-600">"30 days clean! Praise God!"</p>
+                  <p className="text-xs text-gray-600">&quot;30 days clean! Praise God!&quot;</p>
                 </div>
               </div>
             </Card>
@@ -70,7 +70,7 @@ export function AppScreenshots() {
                 </div>
                 <div className="flex-1">
                   <p className="text-xs font-medium">Mike S.</p>
-                  <p className="text-xs text-gray-600">"Prayer request for strength"</p>
+                  <p className="text-xs text-gray-600">&quot;Prayer request for strength&quot;</p>
                 </div>
               </div>
             </Card>
