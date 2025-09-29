@@ -257,7 +257,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">7. Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold mb-4">7. Children&apos;s Privacy</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Our App is designed for users aged 13 and older. We do not knowingly collect personal information from
               children under 13. If we discover that we have collected information from a child under 13, we will delete

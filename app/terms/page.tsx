@@ -23,8 +23,8 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              By downloading, installing, or using the Unhooked mobile application ("App"), you agree to be bound by
-              these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.
+              By downloading, installing, or using the Unhooked mobile application (&quot;App&quot;), you agree to be bound by
+              these Terms of Service (&quot;Terms&quot;). If you do not agree to these Terms, please do not use the App.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               These Terms constitute a legally binding agreement between you and Unhooked regarding your use of the App
@@ -78,7 +78,7 @@ export default function TermsPage() {
               <li>Attempt to solicit romantic or sexual relationships</li>
               <li>Promote non-Christian beliefs or practices that conflict with our faith-based mission</li>
               <li>Use the App for commercial purposes without permission</li>
-              <li>Attempt to hack, disrupt, or compromise the App's security</li>
+              <li>Attempt to hack, disrupt, or compromise the App&apos;s security</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed">
               Violation of these guidelines may result in account suspension or termination.

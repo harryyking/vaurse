@@ -34,7 +34,7 @@ export default function SupportPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-balance mb-4">Support Center</h1>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            We're here to support you on your journey to freedom. Find help, resources, and answers to your questions.
+            We are here to support you on your journey to freedom. Find help, resources, and answers to your questions.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function SupportPage() {
             <div className="flex-1">
               <h2 className="text-xl font-semibold text-red-800 mb-2">Crisis Resources</h2>
               <p className="text-red-700 mb-4">
-                If you're experiencing thoughts of self-harm or suicide, please reach out for immediate help:
+                If you are experiencing thoughts of self-harm or suicide, please reach out for immediate help:
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg border border-red-200">
@@ -84,7 +84,7 @@ export default function SupportPage() {
             </div>
             <h3 className="text-lg font-semibold mb-2">Email Support</h3>
             <p className="text-muted-foreground text-sm mb-4">
-              Send us a detailed message and we'll respond within 24 hours.
+              Send us a detailed message and we will respond within 24 hours.
             </p>
             <Button variant="outline" className="w-full bg-transparent">
               Send Email
@@ -312,7 +312,7 @@ export default function SupportPage() {
             <div className="mt-8 p-4 bg-muted/50 rounded-lg">
               <h3 className="font-semibold mb-2">Need immediate help?</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                If you're struggling with urges or need someone to talk to right away, consider these resources:
+                If you are struggling with urges or need someone to talk to right away, consider these resources:
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Use the emergency support feature in the app</li>
