@@ -306,7 +306,7 @@ export default function PrivacyPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-muted-foreground leading-relaxed mb-2">
-                    <strong>Privacy Officer:</strong> privacy@unhooked.app
+                    <strong>Privacy Officer:</strong> privacy@unhooked.xyz
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-2">
                     <strong>General Support:</strong>{" "}
@@ -317,10 +317,10 @@ export default function PrivacyPage() {
                 </div>
                 <div>
                   <p className="text-muted-foreground leading-relaxed mb-2">
-                    <strong>Data Protection:</strong> dpo@unhooked.app
+                    <strong>Data Protection:</strong> dpo@unhooked.xyz
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    <strong>Address:</strong> [Your Business Address]
+                    <strong>Address:</strong> Accra, Ghana
                   </p>
                 </div>
               </div>

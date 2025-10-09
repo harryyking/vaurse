@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import {Geist} from 'next/font/google'
+import {Plus_Jakarta_Sans} from 'next/font/google'
 import { Suspense } from "react"
 import "./globals.css"
 
-const brandFont = Geist({subsets:['latin']})
+const brandFont = Plus_Jakarta_Sans({subsets:['latin']})
 
 export const metadata: Metadata = {
   title: {

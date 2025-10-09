@@ -273,7 +273,7 @@ export default function SupportPage() {
                   <h3 className="font-semibold">Email Support</h3>
                 </div>
                 <p className="text-muted-foreground text-sm mb-2">For general questions and support:</p>
-                <p className="text-primary">support@unhooked.app</p>
+                <p className="text-primary">support@unhooked.xyz</p>
               </Card>
 
               <Card className="p-4">
@@ -282,7 +282,7 @@ export default function SupportPage() {
                   <h3 className="font-semibold">Privacy & Security</h3>
                 </div>
                 <p className="text-muted-foreground text-sm mb-2">For privacy-related questions:</p>
-                <p className="text-primary">privacy@unhooked.app</p>
+                <p className="text-primary">privacy@unhooked.xyz</p>
               </Card>
 
               <Card className="p-4">
@@ -291,7 +291,7 @@ export default function SupportPage() {
                   <h3 className="font-semibold">Community Issues</h3>
                 </div>
                 <p className="text-muted-foreground text-sm mb-2">To report inappropriate behavior:</p>
-                <p className="text-primary">community@unhooked.app</p>
+                <p className="text-primary">community@unhooked.xyz</p>
               </Card>
 
               <Card className="p-4">
