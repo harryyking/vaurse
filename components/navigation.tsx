@@ -57,6 +57,22 @@ export function Navigation() {
             >
               Terms
             </Link>
+            <Link
+              href="/community"
+              className={`transition-colors ${
+                isActive("/community") ? "text-primary font-medium" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Community
+            </Link>
+            <Link
+              href="/user-guide"
+              className={`transition-colors ${
+                isActive("/user-guide") ? "text-primary font-medium" : "text-foreground hover:text-primary"
+              }`}
+            >
+              User Guide
+            </Link>
             <Button>
               <Download className="w-4 h-4 mr-2" />
               Download App
